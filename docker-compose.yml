@@ -4,6 +4,9 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+      args:
+        - BASIC_USER=${BASIC_USER}
+        - BASIC_PASSWORD=${BASIC_PASSWORD}
     ports:
       - "8000:80"
     volumes:
