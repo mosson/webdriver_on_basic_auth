@@ -7,7 +7,7 @@ gemfile do
   gem "base64"
 end
 
-basic_authorization = Base64.strict_encode64("hoge:fuga")
+basic_authorization = Base64.strict_encode64("#{ENV.fetch("BASIC_USER")}:#{ENV.fetch("BASIC_PASSWORD")}")
 
 driver = Selenium::WebDriver.for :chrome
 
